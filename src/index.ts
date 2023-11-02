@@ -1,3 +1,4 @@
-import isClient from './isClient';
+const useNextQuery = () => {};
 
-export { isClient };
+
+export default useNextQuery;
