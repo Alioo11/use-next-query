@@ -1,6 +1,6 @@
 {
   "name": "use-next-query",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "main": "./build/index.js",
   "module": "./build/index.cjs.js",
@@ -12,7 +12,6 @@
   "files": [
     "build"
   ],
-
   "scripts": {
     "build": "rm -rf build && rollup -c --environment NODE_ENV:development",
     "build:prod": "rollup -c --environment NODE_ENV:production",
