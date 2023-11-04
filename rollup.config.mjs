@@ -25,7 +25,6 @@ const createRollupConfig = () => ({
       sourcemap: devMode ? 'inline' : false,
     },
   ],
-  // external: ['react', 'lodash-es'],
   plugins: [
     json(),
     peerDepsExternal(),
