@@ -43,7 +43,7 @@ const createRollupConfig = [
     },
   ],
   external,
-  plugins: [...plugins,  optimizeLodashImports()],
+  plugins: [...plugins],
 },
 {
   input: 'src/index.ts',
@@ -54,9 +54,7 @@ const createRollupConfig = [
       sourcemap: devMode ? 'inline' : false,
     },
   ],
-  plugins: [...plugins,  optimizeLodashImports({
-    useLodashEs: true
-  })],
+  plugins: [...plugins],
   external,
 
 },
