@@ -7,31 +7,14 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import typescript from 'rollup-plugin-typescript2';
 import json from '@rollup/plugin-json';
+import { optimizeLodashImports } from "@optimize-lodash/rollup-plugin";
 
 const devMode = process.env.NODE_ENV === 'development';
 import packageJson from './package.json' assert { type: "json" };
 
-const createRollupConfig = () => ({
-  input: 'src/index.ts',
-  output: [
-    {
-      file: packageJson.main,
-      format: 'esm',
-      sourcemap: devMode ? 'inline' : false,
-    },
-    {
-      file: packageJson.module,
-      format: 'cjs',
-      sourcemap: devMode ? 'inline' : false,
-    },
-  ],
-  plugins: [
+const plugins  = [
     json(),
     peerDepsExternal(),
-    // terser(),
-    alias({
-      entries: [],
-    }),
     nodeResolve({
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     }),
@@ -43,7 +26,41 @@ const createRollupConfig = () => ({
       ignoreGlobal: true,
       include: /\/node_modules\//,
     }),
+  ];
+
+  const external = ['react', 'lodash-es', 'lodash', 'use-delayed-render','fast-deep-equal'];
+
+
+
+const createRollupConfig = [
+  {
+  input: 'src/index.ts',
+  output: [
+    {
+      file: packageJson.module,
+      format: 'cjs',
+      sourcemap: devMode ? 'inline' : false,
+    },
   ],
-});
+  external,
+  plugins: [...plugins,  optimizeLodashImports()],
+},
+{
+  input: 'src/index.ts',
+  output: [
+    {
+      file: packageJson.main,
+      format: 'esm',
+      sourcemap: devMode ? 'inline' : false,
+    },
+  ],
+  plugins: [...plugins,  optimizeLodashImports({
+    useLodashEs: true
+  })],
+  external,
+
+},
+
+];
 
 export default createRollupConfig;
