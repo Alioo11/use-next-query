@@ -24,3 +24,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
+
+# typescript
+*.tsbuildinfo
+build

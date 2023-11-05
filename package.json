@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "./build/index.js",
   "module": "./build/index.cjs.js",
-  "typings": "./build/index.d.ts",
+  "typings": "./build/src/index.d.ts",
   "exports": {
     "require": "./build/index.cjs.js",
     "import": "./build/index.js"
