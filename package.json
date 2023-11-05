@@ -5,6 +5,7 @@
   "main": "./build/index.js",
   "module": "./build/index.cjs.js",
   "typings": "./build/src/index.d.ts",
+  "type": "module",
   "exports": {
     "require": "./build/index.cjs.js",
     "import": "./build/index.js"
