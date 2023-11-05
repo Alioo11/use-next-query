@@ -1,6 +1,6 @@
 {
   "name": "use-next-query",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
   "main": "./build/index.js",
   "module": "./build/index.cjs.js",
