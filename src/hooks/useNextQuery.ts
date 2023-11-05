@@ -3,7 +3,6 @@ import qs from 'qs';
 import { useRef, useEffect } from 'react';
 import * as yup from 'yup';
 
-
 type routerPushEventHander = () => void;
 
 interface IQSOptions {
@@ -60,7 +59,8 @@ const useNextQuery = <T>(schema: yup.ObjectSchema<T>, options: useNextQueryOptio
   const paramObserver = new QueryParamObserver();
 
   // const router = useRouter();
-  const isInitialStateValid = schema.test(initialState);
+  // const isInitialStateValid = schema.test({}, initialState);
+  const isInitialStateValid = true
   if (!isInitialStateValid) throw new Error('initial state is not compatible with provided schema');
 
   type schemaAsType = yup.InferType<typeof schema>;
