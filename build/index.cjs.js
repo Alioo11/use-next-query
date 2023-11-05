@@ -2297,10 +2297,6 @@ const useNextQuery = (schema, options) => {
     const queryCurrentState = React.useRef(null);
     const queryPreviousState = React.useRef(null);
     const paramObserver = new QueryParamObserver();
-    // const router = useRouter();
-    const isInitialStateValid = schema.test(initialState);
-    if (!isInitialStateValid)
-        throw new Error('initial state is not compatible with provided schema');
     const update = (key, value) => (queryCurrentState.current[key] = value);
     const watch = (key, callback) => paramObserver.subscribe(key, callback); // TODO fix any
     // side effects
