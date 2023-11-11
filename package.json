@@ -1,6 +1,6 @@
 {
   "name": "use-next-query",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "license": "MIT",
   "main": "./build/index.js",
   "module": "./build/index.cjs.js",
@@ -31,7 +31,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^18.15.0",
-    "@types/react":"^18.2.21",
+    "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
